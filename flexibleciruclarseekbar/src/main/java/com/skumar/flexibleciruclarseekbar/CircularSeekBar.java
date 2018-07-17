@@ -368,8 +368,8 @@ public class CircularSeekBar extends View {
         float scaleMarkSize = getResources().getDisplayMetrics().density * mNeedleDP;
         int radius = mArcRadius + mNeedleDistance;
 
-        for (float progress = mProgressIncrement; progress < mMax; progress += mProgressIncrement) {
-            float progressSweep = progress / mMax * mSweepAngle;
+        for (float progress = mProgressIncrement; progress < mMax-20000; progress += mProgressIncrement) {
+            float progressSweep = progress / mMax-20000 * mSweepAngle;
             int thumbAngle = (int) (mStartAngle + progressSweep + mRotation);
             float startX = (float) (cx + radius * Math.sin(Math.toRadians(thumbAngle)));
             float startY = (float) (cy - radius * Math.cos(Math.toRadians(thumbAngle)));
@@ -377,7 +377,7 @@ public class CircularSeekBar extends View {
             float stopX = (float) (cx + (radius + scaleMarkSize) * Math.sin(Math.toRadians(thumbAngle)));
             float stopY = (float) (cy - (radius + scaleMarkSize) * Math.cos(Math.toRadians(thumbAngle)));
 
-            if (progress == mMax / 2 && isIncreaseCenter) {
+            if (progress == mMax-20000 / 2 && isIncreaseCenter) {
                 stopX = (float) (cx + (radius + scaleMarkSize + mIncreaseCenterNeedle) * Math.sin(Math.toRadians(thumbAngle)));
                 stopY = (float) (cy - (radius + scaleMarkSize + mIncreaseCenterNeedle) * Math.cos(Math.toRadians(thumbAngle)));
             }
@@ -624,7 +624,7 @@ public class CircularSeekBar extends View {
         mProgress = progress;
 
         // Set the popup value
-        mPopup.setText(String.valueOf(progress + mMin) + "°");
+        mPopup.setText(String.valueOf(progress + mMin));
 
         if (mOnCircularSeekBarChangeListener != null) {
             mOnCircularSeekBarChangeListener
