@@ -62,8 +62,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mCircularSeekBar.sweepAngle = 270
         mCircularSeekBar.arcRotation = 225
         mCircularSeekBar.arcThickness = 30
-        mCircularSeekBar.min = 10
-        mCircularSeekBar.max = 30
+        mCircularSeekBar.min = 0
+        mCircularSeekBar.max = 200000
         mCircularSeekBar.progress = progressValue
         mCircularSeekBar.setIncreaseCenterNeedle(20)
         mCircularSeekBar.valueStep = 2
