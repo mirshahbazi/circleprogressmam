@@ -335,7 +335,7 @@ public class CircularSeekBar extends View {
     }
 
     /**
-     * Method to drawing the gradient color for the arc
+     * Method to drawing the gradient color for the arc mam
      */
     public void setShader() {
         SweepGradient sweepgradient = new SweepGradient(mArcRadius, mArcRadius,
